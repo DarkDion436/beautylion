@@ -3,16 +3,21 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import { products, categories } from "@/lib/products";
+import DiscountBanner from "@/components/DiscountBanner";
+import Consultation from "@/components/Consultation";
+
+import FeaturesBanner from "@/components/FeaturesBanner";
 
 const categoryImages: Record<string, string> = {
-  Skincare: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80",
-  Haircare: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
-  Makeup: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80",
-  Fragrance: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=80",
+  Skincare: "/images/skincare1.jpg",
+  Haircare: "/images/haircare.jpg",
+  Makeup: "/images/makeupt.jpg",
+  Fragrance: "/images/dear.jpg",
 };
 
 export default function HomePage() {
   const bestSellers = products.filter((p) => p.isBestSeller).slice(0, 4);
+  const newArrivals = products.filter((p) => p.isNew).slice(0, 4);
 
   return (
     <div>
@@ -20,8 +25,8 @@ export default function HomePage() {
       <section className="relative bg-navy-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <Image
-            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1600&q=80"
-            alt=""
+            src="/images/cosrxhr.png"
+            alt="hero-image"
             fill
             className="object-cover"
             priority
@@ -94,6 +99,21 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      < DiscountBanner />
+      {/* New Arrivals Preview */}
+      <section className="container-x py-16 bg-navy-50/40 rounded-sm">
+        <div className="flex items-end justify-between mb-10 px-2 pt-8">
+          <h2 className="section-heading">New Arrivals</h2>
+          <Link href="/new-arrivals" className="text-sm font-medium text-navy-700 hover:text-ink flex items-center gap-1">
+            View all <ArrowRight size={14} />
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 px-2 pb-8">
+          {newArrivals.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
 
       {/* Trust strip */}
       <section className="container-x py-20 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
@@ -110,6 +130,9 @@ export default function HomePage() {
           <p className="text-sm text-navy-500">Fast, tracked delivery across Kenya.</p>
         </div>
       </section>
+      < Consultation />
+      <FeaturesBanner />
+      
     </div>
   );
 }

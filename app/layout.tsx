@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import FloatingCartButton from "@/components/FloatingCartButton";
+import WhatsAppButton from "@/components/WhatsAppButton";
+
 
 export const metadata: Metadata = {
   title: "Noire Beauté — Premium Beauty, Delivered",
@@ -22,6 +24,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <WhatsAppButton />
         <CartDrawer />
         <FloatingCartButton />
       </body>
