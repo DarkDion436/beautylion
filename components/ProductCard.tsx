@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import { Plus, Star, Check } from "lucide-react";
+import { ShoppingCart, Eye, Star, Check } from "lucide-react";
+
 import { Product } from "@/lib/types";
 import { formatKES } from "@/lib/validators";
 import { useCartStore } from "@/context/useCartStore";
@@ -14,59 +16,117 @@ export default function ProductCard({ product }: { product: Product }) {
   function handleAdd() {
     addToCart(product, 1);
     setJustAdded(true);
+
     setTimeout(() => setJustAdded(false), 1500);
   }
 
   return (
-    <div className="group bg-white rounded-sm border border-navy-100 overflow-hidden hover:shadow-soft transition-all duration-300">
+    <div className="group overflow-hidden rounded-xl border border-navy-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
       <div className="relative aspect-[4/5] overflow-hidden bg-navy-50">
+
         <Image
           src={product.image}
           alt={product.name}
           fill
-          sizes="(max-width: 768px) 50vw, 25vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width:768px) 50vw,25vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+
+
+        {/* Product Labels */}
+        <div className="absolute left-3 top-3 flex flex-col gap-2">
+
           {product.isNew && (
-            <span className="bg-navy-800 text-white text-[10px] uppercase tracking-wider px-2 py-1 rounded-sm">
+            <span className="rounded-full bg-navy-800 px-3 py-1 text-[10px] uppercase tracking-wider text-white">
               New
             </span>
           )}
+
           {product.isBestSeller && (
-            <span className="bg-white text-ink text-[10px] uppercase tracking-wider px-2 py-1 rounded-sm border border-ink/10">
+            <span className="rounded-full border border-black/10 bg-white px-3 py-1 text-[10px] uppercase tracking-wider text-black">
               Best Seller
             </span>
           )}
+
         </div>
-        <button
-          onClick={handleAdd}
-          aria-label={`Add ${product.name} to cart`}
-          className={`absolute bottom-3 right-3 h-10 w-10 rounded-full flex items-center justify-center shadow-md transition-all duration-300 ${
-            justAdded ? "bg-green-600" : "bg-ink hover:bg-navy-800"
-          }`}
-        >
-          {justAdded ? (
-            <Check size={18} className="text-white" />
-          ) : (
-            <Plus size={18} className="text-white" />
-          )}
-        </button>
+
+
+        {/* Action Buttons */}
+        <div className="absolute bottom-3 right-3 flex gap-2">
+
+          {/* View Details */}
+          <Link
+            href={`/products/${product.id}`}
+            aria-label={`View ${product.name}`}
+            className="
+              flex h-10 w-10 items-center justify-center
+              rounded-full bg-white text-black
+              shadow-md transition-all duration-300
+              hover:bg-navy-800 hover:text-white
+            "
+          >
+            <Eye size={18} />
+          </Link>
+
+
+          {/* Add To Cart */}
+          <button
+            onClick={handleAdd}
+            aria-label={`Add ${product.name} to cart`}
+            className={`
+              flex h-10 w-10 items-center justify-center
+              rounded-full shadow-md transition-all duration-300
+              ${
+                justAdded
+                  ? "bg-green-600"
+                  : "bg-black hover:bg-navy-800"
+              }
+            `}
+          >
+            {justAdded ? (
+              <Check size={18} className="text-white" />
+            ) : (
+              <ShoppingCart size={18} className="text-white" />
+            )}
+          </button>
+
+        </div>
+
       </div>
 
+
+      {/* Product Info */}
       <div className="p-4">
-        <p className="text-[11px] uppercase tracking-wider text-navy-500 mb-1">
+
+        <p className="mb-1 text-[11px] uppercase tracking-wider text-navy-500">
           {product.category}
         </p>
-        <h3 className="font-serif text-base leading-snug mb-1.5 text-ink">
+
+
+        <h3 className="mb-2 font-serif text-base leading-snug text-ink">
           {product.name}
         </h3>
-        <div className="flex items-center gap-1 mb-2">
-          <Star size={13} className="fill-navy-800 text-navy-800" />
-          <span className="text-xs text-navy-600">{product.rating}</span>
+
+
+        <div className="mb-2 flex items-center gap-1">
+          <Star
+            size={13}
+            className="fill-navy-800 text-navy-800"
+          />
+
+          <span className="text-xs text-navy-600">
+            {product.rating}
+          </span>
         </div>
-        <p className="font-medium text-ink">{formatKES(product.price)}</p>
+
+
+        <p className="font-semibold text-ink">
+          {formatKES(product.price)}
+        </p>
+
       </div>
+
     </div>
   );
 }

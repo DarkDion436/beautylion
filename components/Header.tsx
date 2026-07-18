@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { useCartStore } from "@/context/useCartStore";
 import PromoBanner from "./PromoBanner";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -32,13 +33,23 @@ export default function Header() {
       <div className="container-x">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none">
-            <span className="font-serif text-2xl sm:text-3xl tracking-wide text-ink">
-              NOIRE&nbsp;BEAUTÉ
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+                 src="/images/lionlogo.png"
+                 alt="Lion of Judah Beauty"
+                 width={100}
+                 height={60}
+                 className="object-contain mt-1.5"
+                 priority
+            />
+            <div className="grid">
+              <span className="font-serif text-2xl sm:text-3xl tracking-wide text-ink">
+              LION OF&nbsp;JUDAH
             </span>
-            <span className="text-[10px] tracking-[0.3em] text-navy-600 uppercase mt-0.5">
-              Nairobi
+            <span className=" text-[10px] tracking-[0.3em] text-navy-600 uppercase mt-0.5">
+              BEAUTY
             </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

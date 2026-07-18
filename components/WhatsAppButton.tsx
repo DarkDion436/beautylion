@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
-const PHONE_NUMBER = "254712345678"; // Replace with your WhatsApp number
+const PHONE_NUMBER = "+254793692936"; // Replace with your WhatsApp number
 const MESSAGE =
   "Hello Lion Of Judah, I'm interested in your products and would like to place an order.";
 

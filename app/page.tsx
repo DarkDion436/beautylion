@@ -132,7 +132,7 @@ export default function HomePage() {
       </section>
       < Consultation />
       <FeaturesBanner />
-      
+       
     </div>
   );
 }

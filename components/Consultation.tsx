@@ -152,74 +152,9 @@ export default function Consultation() {
 
             </div>
 
-            {/* FORM */}
+  
 
-            <div className="mt-14 rounded-3xl border border-stone-200 bg-white p-8 shadow-xl">
-
-              <form className="space-y-6">
-
-                <div className="grid gap-6 md:grid-cols-2">
-
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="rounded-xl border border-stone-300 px-5 py-4 outline-none transition focus:border-black"
-                  />
-
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="rounded-xl border border-stone-300 px-5 py-4 outline-none transition focus:border-black"
-                  />
-
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2">
-
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    className="rounded-xl border border-stone-300 px-5 py-4 outline-none transition focus:border-black"
-                  />
-
-                  <select className="rounded-xl border border-stone-300 px-5 py-4 outline-none transition focus:border-black">
-
-                    <option>Consultation Type</option>
-
-                    <option>Skincare Consultation</option>
-
-                    <option>Haircare Consultation</option>
-
-                    <option>Makeup Consultation</option>
-
-                    <option>Body Care Consultation</option>
-
-                    <option>Beauty Routine Advice</option>
-
-                    <option>Product Recommendation</option>
-
-                  </select>
-
-                </div>
-
-                <textarea
-                  rows={5}
-                  placeholder="Tell us about your beauty concerns or goals..."
-                  className="w-full rounded-xl border border-stone-300 px-5 py-4 outline-none transition focus:border-black"
-                />
-
-                <button
-                  type="submit"
-                  className="flex w-full items-center justify-center gap-3 rounded-xl bg-black py-4 font-semibold text-white transition duration-300 hover:bg-stone-900"
-                >
-                  Book Your Free Consultation
-                  <ArrowRight size={18} />
-                </button>
-
-              </form>
-
-            </div>
-
+            
             {/* Trust Stats */}
 
             <div className="mt-12 grid grid-cols-3 gap-6 border-t border-stone-200 pt-8 text-center">
