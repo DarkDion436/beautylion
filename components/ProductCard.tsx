@@ -21,7 +21,7 @@ export default function ProductCard({ product }: { product: Product }) {
   }
 
   return (
-    <div className="group overflow-hidden rounded-xl border border-navy-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <div className="group overflow-hidden  border border-navy-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
 
       <div className="relative aspect-[4/5] overflow-hidden bg-navy-50">
 
@@ -38,13 +38,13 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="absolute left-3 top-3 flex flex-col gap-2">
 
           {product.isNew && (
-            <span className="rounded-full bg-navy-800 px-3 py-1 text-[10px] uppercase tracking-wider text-white">
+            <span className=" bg-navy-800 px-3 py-1 text-[10px] uppercase tracking-wider text-white">
               New
             </span>
           )}
 
           {product.isBestSeller && (
-            <span className="rounded-full border border-black/10 bg-white px-3 py-1 text-[10px] uppercase tracking-wider text-black">
+            <span className=" border border-black/10 bg-white px-3 py-1 text-[10px] uppercase tracking-wider text-black">
               Best Seller
             </span>
           )}
@@ -61,7 +61,7 @@ export default function ProductCard({ product }: { product: Product }) {
             aria-label={`View ${product.name}`}
             className="
               flex h-10 w-10 items-center justify-center
-              rounded-full bg-white text-black
+               bg-white text-black
               shadow-md transition-all duration-300
               hover:bg-navy-800 hover:text-white
             "
@@ -76,7 +76,7 @@ export default function ProductCard({ product }: { product: Product }) {
             aria-label={`Add ${product.name} to cart`}
             className={`
               flex h-10 w-10 items-center justify-center
-              rounded-full shadow-md transition-all duration-300
+               shadow-md transition-all duration-300
               ${
                 justAdded
                   ? "bg-green-600"

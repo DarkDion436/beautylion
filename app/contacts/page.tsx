@@ -118,6 +118,29 @@ export default function ContactsPage() {
           )}
         </div>
       </div>
+      {/* Google Map */}
+<section className="mt-20">
+  <div className="mb-8 text-center">
+    <h2 className="section-heading mb-3">Visit Our Store</h2>
+    <p className="text-navy-500 max-w-2xl mx-auto">
+      Visit Lion of Judah Beauty Shop at Dubois Road, Nairobi. We look
+      forward to serving you with authentic beauty and wellness products.
+    </p>
+  </div>
+
+  <div className="overflow-hidden rounded-xl border border-navy-100 shadow-lg">
+    <iframe
+      title="Lion of Judah Beauty Shop Location"
+      src="https://www.google.com/maps?q=Dubois%20Road%20Nairobi&output=embed"
+      width="100%"
+      height="500"
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+      className="w-full"
+    />
+  </div>
+</section>
     </div>
   );
 }

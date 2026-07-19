@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import { products, categories } from "@/lib/products";
 import DiscountBanner from "@/components/DiscountBanner";
 import Consultation from "@/components/Consultation";
+import ShopByCategory from "@/components/shopbycategory";
 
 import FeaturesBanner from "@/components/FeaturesBanner";
 
@@ -58,32 +59,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Categories */}
-      <section className="container-x py-20">
-        <div className="flex items-end justify-between mb-10">
-          <h2 className="section-heading">Shop by Category</h2>
-        </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {categories.map((cat) => (
-            <Link
-              key={cat}
-              href={`/shop?category=${encodeURIComponent(cat)}`}
-              className="group relative aspect-[3/4] rounded-sm overflow-hidden"
-            >
-              <Image
-                src={categoryImages[cat]}
-                alt={cat}
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="absolute bottom-5 left-5">
-                <span className="text-white font-serif text-xl">{cat}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <ShopByCategory />
 
       {/* Best Sellers Preview */}
       <section className="container-x py-16 bg-navy-50/40 rounded-sm">
@@ -114,24 +90,10 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      {/* Trust strip */}
-      <section className="container-x py-20 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-        <div>
-          <h3 className="font-serif text-lg mb-2">Guest Checkout</h3>
-          <p className="text-sm text-navy-500">No account needed. Order in under a minute.</p>
-        </div>
-        <div>
-          <h3 className="font-serif text-lg mb-2">Pay via M-Pesa</h3>
-          <p className="text-sm text-navy-500">Secure STK Push straight to your phone.</p>
-        </div>
-        <div>
-          <h3 className="font-serif text-lg mb-2">Nationwide Delivery</h3>
-          <p className="text-sm text-navy-500">Fast, tracked delivery across Kenya.</p>
-        </div>
-      </section>
       < Consultation />
       <FeaturesBanner />
+      
+      
        
     </div>
   );
