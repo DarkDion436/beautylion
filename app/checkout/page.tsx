@@ -11,6 +11,7 @@ import { OrderStatus, CheckoutDetails } from "@/lib/types";
 import PaymentModal from "@/components/PaymentModal";
 
 const DELIVERY_FEE = 300;
+const WHATSAPP_NUMBER = "+254793692936";
 const POLL_INTERVAL_MS = 2500;
 const MAX_POLL_ATTEMPTS = 16;
 
@@ -85,6 +86,52 @@ export default function CheckoutPage() {
       setErrorMessage("Something went wrong while confirming payment.");
     }
   }
+
+  function handleWhatsAppOrder() {
+  if (!validate()) return;
+
+  const orderItems = items
+    .map(
+      ({ product, quantity }) =>
+        `• ${product.name} x${quantity} - ${formatKES(
+          product.price * quantity
+        )}`
+    )
+    .join("\n");
+
+
+  const message = `
+🛍️ *New Order - Lion of Judah Beauty Shop*
+
+👤 Customer Details:
+Name: ${form.fullName}
+Phone: ${form.phone}
+Email: ${form.email}
+
+📍 Delivery Address:
+${form.address}
+
+🛒 Order Items:
+${orderItems}
+
+💰 Order Summary:
+Subtotal: ${formatKES(subtotal)}
+Delivery: ${formatKES(DELIVERY_FEE)}
+Total: ${formatKES(total)}
+
+💳 Payment:
+I will confirm payment via M-Pesa.
+
+Thank you.
+  `;
+
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    message
+  )}`;
+
+  window.open(whatsappUrl, "_blank");
+}
 
   async function handlePlaceOrder() {
     if (!validate()) return;
@@ -256,6 +303,25 @@ export default function CheckoutPage() {
                 <span>{formatKES(total)}</span>
               </div>
             </div>
+
+            
+            <button
+              onClick={handleWhatsAppOrder}
+              className="
+                w-full mt-3 
+                rounded-sm 
+                border border-green-600 
+                bg-green-600 
+                px-6 py-3 
+                text-white 
+                text-sm 
+                font-medium
+                hover:bg-green-700
+                transition
+              "
+            >
+              Order via WhatsApp & Confirm Payment
+            </button>
 
             <button
               onClick={handlePlaceOrder}

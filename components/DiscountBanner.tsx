@@ -56,7 +56,7 @@ const slides = [
     discount: "NEW COLLECTION",
     description:
       "Shop the newest skincare, makeup, body care and haircare products from trusted international beauty brands loved by professionals.",
-    image: "/images/banner/new-arrivals.jpg",
+    image: "/images/storypic.png",
   },
 ];
 
