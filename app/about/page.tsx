@@ -10,11 +10,11 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[350px] bg-navy-900">
         <Image
-          src="/images/about-hero.jpg"
+          src="/images/storypic.png"
           alt="Lion of Judah Beauty Shop"
           fill
           priority
-          className="object-cover opacity-55"
+          className="object-cover opacity-55 blur-sm scale-80"
         />
 
         <div className="absolute inset-0 bg-black/35" />
