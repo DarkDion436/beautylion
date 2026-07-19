@@ -8,10 +8,18 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 
 export const metadata: Metadata = {
-  title: "Noire Beauté — Premium Beauty, Delivered",
+  title: "LION-BEAUTY-SHOP — Premium Beauty, Delivered",
   description:
     "Considered skincare, haircare, makeup, and fragrance essentials. Guest checkout with M-Pesa payment, delivered across Kenya.",
-};
+  icons: {
+    icon: "/images/lionlogo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+
+
+
+  };
 
 export default function RootLayout({
   children,

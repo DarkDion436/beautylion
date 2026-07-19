@@ -67,16 +67,7 @@ export default function FeaturesBanner() {
           })}
         </div>
 
-        {/* Bottom Trust Bar */}
-        <div className="flex flex-wrap items-center justify-center gap-4 border-t border-stone-200 py-5 text-center text-sm font-medium text-stone-600 lg:gap-8">
-          <span>🚚 Nationwide Delivery</span>
-          <span>•</span>
-          <span>🔒 Secure Checkout</span>
-          <span>•</span>
-          <span>⭐ Premium Beauty Products</span>
-          <span>•</span>
-          <span>💬 Expert Customer Support</span>
-        </div>
+       
       </div>
     </section>
   );
