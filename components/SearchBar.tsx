@@ -1,55 +1,44 @@
 "use client";
 
 import { Search } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
 
 interface SearchBarProps {
-  defaultValue?: string;
+  value: string;
+  onChange: (value: string) => void;
 }
 
 export default function SearchBar({
-  defaultValue = "",
+  value,
+  onChange,
 }: SearchBarProps) {
-  const [query, setQuery] = useState(defaultValue);
-
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-
-    const params = new URLSearchParams(searchParams);
-
-    if (query.trim()) {
-      params.set("search", query.trim());
-    } else {
-      params.delete("search");
-    }
-
-    router.push(`/shop?${params.toString()}`);
-  }
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="mx-auto flex max-w-2xl overflow-hidden rounded-full border border-stone-300 bg-white shadow-sm"
-    >
-      <input
-        type="text"
-        placeholder="Search skincare, makeup, haircare..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        className="flex-1 px-6 py-4 text-sm outline-none"
+    <div className="relative w-full">
+      <Search
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+        size={18}
       />
 
-      <button
-        type="submit"
-        className="flex items-center gap-2 bg-black px-8 text-white transition hover:bg-red-600"
-      >
-        <Search size={18} />
-        Search
-      </button>
-    </form>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Search products, brands, concerns..."
+        className="
+          w-full
+          rounded-lg
+          border
+          border-gray-200
+          bg-white
+          py-3
+          pl-11
+          pr-4
+          text-sm
+          focus:border-brand
+          focus:outline-none
+          focus:ring-2
+          focus:ring-brand/20
+        "
+      />
+    </div>
   );
 }

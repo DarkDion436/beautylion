@@ -15,6 +15,13 @@ export const products: Product[] = [
     dateAdded: "2026-06-20",
     rating: 4.8,
     stock: 24,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
+    
   },
   {
     id: "sk-002",
@@ -28,6 +35,12 @@ export const products: Product[] = [
     dateAdded: "2026-03-11",
     rating: 4.6,
     stock: 40,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-003",
@@ -41,6 +54,12 @@ export const products: Product[] = [
     dateAdded: "2026-07-01",
     rating: 4.7,
     stock: 18,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-004",
@@ -54,6 +73,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-005",
@@ -67,6 +92,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   
   {
@@ -81,6 +112,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-007",
@@ -94,6 +131,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-008",
@@ -107,6 +150,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-009",
@@ -120,6 +169,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-010",
@@ -133,6 +188,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-011",
@@ -146,6 +207,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-012",
@@ -159,6 +226,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-013",
@@ -172,6 +245,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-014",
@@ -185,6 +264,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "sk-015",
@@ -198,6 +283,12 @@ export const products: Product[] = [
     dateAdded: "2025-11-02",
     rating: 4.4,
     stock: 33,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
 
 
@@ -214,6 +305,12 @@ export const products: Product[] = [
     dateAdded: "2025-09-14",
     rating: 4.9,
     stock: 27,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "hc-002",
@@ -227,6 +324,12 @@ export const products: Product[] = [
     dateAdded: "2026-06-28",
     rating: 4.5,
     stock: 50,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "hc-003",
@@ -240,6 +343,12 @@ export const products: Product[] = [
     dateAdded: "2025-12-19",
     rating: 4.3,
     stock: 21,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "hc-004",
@@ -253,6 +362,12 @@ export const products: Product[] = [
     dateAdded: "2025-12-19",
     rating: 4.3,
     stock: 21,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
 {
     id: "hc-008",
@@ -266,6 +381,12 @@ export const products: Product[] = [
     dateAdded: "2025-12-19",
     rating: 4.3,
     stock: 21,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "hc-005",
@@ -279,6 +400,12 @@ export const products: Product[] = [
     dateAdded: "2025-12-19",
     rating: 4.3,
     stock: 21,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   
   {
@@ -293,6 +420,12 @@ export const products: Product[] = [
     dateAdded: "2025-12-19",
     rating: 4.3,
     stock: 21,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
 
 {
@@ -307,6 +440,12 @@ export const products: Product[] = [
     dateAdded: "2025-12-19",
     rating: 4.3,
     stock: 21,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
 
   //makeup products
@@ -322,6 +461,12 @@ export const products: Product[] = [
     dateAdded: "2025-08-05",
     rating: 4.7,
     stock: 60,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "mk-002",
@@ -335,6 +480,12 @@ export const products: Product[] = [
     dateAdded: "2026-07-05",
     rating: 4.8,
     stock: 15,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "mk-003",
@@ -348,6 +499,12 @@ export const products: Product[] = [
     dateAdded: "2025-10-22",
     rating: 4.5,
     stock: 29,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "mk-004",
@@ -361,6 +518,12 @@ export const products: Product[] = [
     dateAdded: "2026-06-30",
     rating: 4.6,
     stock: 45,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "fr-001",
@@ -374,6 +537,12 @@ export const products: Product[] = [
     dateAdded: "2025-07-18",
     rating: 4.9,
     stock: 12,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "fr-002",
@@ -387,6 +556,12 @@ export const products: Product[] = [
     dateAdded: "2026-07-10",
     rating: 4.4,
     stock: 22,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
   {
     id: "fr-003",
@@ -400,6 +575,12 @@ export const products: Product[] = [
     dateAdded: "2025-05-30",
     rating: 4.6,
     stock: 55,
+    brand: "Cosrx",    
+    subcategory: "Toner",
+    concerns: [
+    "Dry Skin",
+    "Sensitive Skin"
+  ],
   },
 ];
 

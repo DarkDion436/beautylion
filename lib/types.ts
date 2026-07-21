@@ -1,17 +1,20 @@
 export type Category = "Skincare" | "Haircare" | "Makeup" | "Fragrance";
 
 export interface Product {
-  id: string;
-  name: string;
-  category: Category;
-  price: number; // KES
-  image: string;
-  description: string;
-  isNew: boolean;
-  isBestSeller: boolean;
-  dateAdded: string; // ISO date, used for "Newest" sort
-  rating: number;
-  stock: number;
+    id: string;
+    name: string;
+    brand: string;
+    category: Category;
+    subcategory: string;
+    concerns: string[];
+    description: string;
+    image: string;
+    price: number;
+    rating: number;
+    stock: number;
+    isNew: boolean;
+    isBestSeller: boolean;
+    dateAdded: string;
 }
 
 export interface CartItem {

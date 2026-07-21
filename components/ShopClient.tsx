@@ -2,6 +2,8 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import { Search } from "lucide-react";
+
 import ProductCard from "@/components/ProductCard";
 import Filters, { SortOption } from "@/components/Filters";
 import Pagination from "@/components/Pagination";
@@ -17,7 +19,6 @@ interface ShopClientProps {
 }
 
 const MAX_PRICE = Math.max(...products.map((p) => p.price));
-
 const PRODUCTS_PER_PAGE = 20;
 
 export default function ShopClient({
@@ -39,10 +40,12 @@ export default function ShopClient({
 
   const [currentPage, setCurrentPage] = useState(1);
 
+  // NEW SEARCH STATE
+  const [search, setSearch] = useState("");
+
   useEffect(() => {
     if (categoryFromUrl) {
       setSelectedCategories([categoryFromUrl]);
-      setCurrentPage(1);
     }
   }, [categoryFromUrl]);
 
@@ -57,12 +60,12 @@ export default function ShopClient({
   // Reset page whenever filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategories, priceRange, sort, filter]);
+  }, [search, selectedCategories, priceRange, sort, filter]);
 
   const filtered = useMemo(() => {
     let list = [...products];
 
-    // Page filter
+    // Page Filters
     if (filter === "new") {
       list = list.filter((p) => p.isNew);
     }
@@ -75,14 +78,30 @@ export default function ShopClient({
       list = list.filter((p) => p.category === "Fragrance");
     }
 
-    // Categories
+    // Category Filter
     if (selectedCategories.length > 0) {
       list = list.filter((p) =>
         selectedCategories.includes(p.category)
       );
     }
 
-    // Price
+    // SEARCH FILTER
+    if (search.trim() !== "") {
+      const query = search.toLowerCase();
+
+      list = list.filter((product) =>
+        product.name.toLowerCase().includes(query) ||
+        product.description.toLowerCase().includes(query) ||
+        product.category.toLowerCase().includes(query) ||
+        product.brand.toLowerCase().includes(query) ||
+        product.subcategory.toLowerCase().includes(query) ||
+        product.concerns.some((concern) =>
+          concern.toLowerCase().includes(query)
+        )
+      );
+    }
+
+    // Price Filter
     list = list.filter((p) => p.price <= priceRange);
 
     // Sorting
@@ -104,7 +123,7 @@ export default function ShopClient({
     }
 
     return list;
-  }, [filter, selectedCategories, priceRange, sort]);
+  }, [filter, selectedCategories, priceRange, sort, search]);
 
   // Pagination
   const totalPages = Math.ceil(filtered.length / PRODUCTS_PER_PAGE);
@@ -118,8 +137,9 @@ export default function ShopClient({
 
   return (
     <div className="container-x py-12">
+      {/* Header */}
       <div className="mb-10">
-        <h1 className="section-heading mb-2">{title}</h1>
+        <h1 className="section-heading mb-3">{title}</h1>
 
         {description && (
           <p className="max-w-2xl text-navy-500">
@@ -129,6 +149,7 @@ export default function ShopClient({
       </div>
 
       <div className="flex flex-col gap-10 lg:flex-row">
+        {/* Sidebar */}
         {showFilters && (
           <Filters
             selectedCategories={selectedCategories}
@@ -142,10 +163,27 @@ export default function ShopClient({
           />
         )}
 
+        {/* Products */}
         <div className="flex-1">
+          {/* Search */}
+          <div className="relative mb-8">
+            <Search
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+              size={18}
+            />
+
+            <input
+              type="text"
+              placeholder="Search products, brands, categories..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full rounded-lg border border-gray-200 bg-white py-3 pl-12 pr-4 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
+            />
+          </div>
+
           {filtered.length === 0 ? (
             <div className="py-24 text-center text-navy-400">
-              No products match your filters.
+              No products match your search or filters.
             </div>
           ) : (
             <>
