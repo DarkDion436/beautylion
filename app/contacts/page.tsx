@@ -35,31 +35,31 @@ export default function ContactsPage() {
             <Mail size={20} className="text-navy-800 flex-shrink-0 mt-0.5" />
             <div>
               <h3 className="font-medium text-sm mb-1">Email</h3>
-              <p className="text-navy-600 text-sm">hello@noirebeaute.co.ke</p>
-              <p className="text-navy-600 text-sm">support@noirebeaute.co.ke</p>
+              <p className="text-navy-600 text-sm">lionofjudah254@gmail.com</p>
+              <p className="text-navy-600 text-sm">lionofjudah254@gmail.com</p>
             </div>
           </div>
           <div className="flex gap-4">
             <Phone size={20} className="text-navy-800 flex-shrink-0 mt-0.5" />
             <div>
               <h3 className="font-medium text-sm mb-1">Phone</h3>
-              <p className="text-navy-600 text-sm">+254 700 123 456</p>
+              <p className="text-navy-600 text-sm">+254 793 692 936</p>
             </div>
           </div>
           <div className="flex gap-4">
             <Clock size={20} className="text-navy-800 flex-shrink-0 mt-0.5" />
             <div>
               <h3 className="font-medium text-sm mb-1">Operational Hours</h3>
-              <p className="text-navy-600 text-sm">Mon – Fri: 8:00 AM – 6:00 PM</p>
-              <p className="text-navy-600 text-sm">Saturday: 9:00 AM – 4:00 PM</p>
+              <p className="text-navy-600 text-sm">Mon – Fri: 7:30 AM – 6:30 PM</p>
+              <p className="text-navy-600 text-sm">Saturday: 7:30 AM – 6:30 PM</p>
               <p className="text-navy-600 text-sm">Sunday: Closed</p>
             </div>
           </div>
           <div className="flex gap-4">
             <MapPin size={20} className="text-navy-800 flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-medium text-sm mb-1">Studio</h3>
-              <p className="text-navy-600 text-sm">Westlands, Nairobi, Kenya</p>
+              <h3 className="font-medium text-sm mb-1">Location</h3>
+              <p className="text-navy-600 text-sm">Beauty Galleria-Junction Stalls, Dubois, Nairobi, Kenya</p>
             </div>
           </div>
         </div>
