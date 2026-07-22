@@ -68,7 +68,7 @@ export default function PaymentModal({
               Order <span className="font-semibold text-ink">#{orderId}</span> Confirmed
             </p>
             <p className="text-sm text-navy-500 mb-6">
-              A confirmation has been sent to your email. Thank you for shopping with Noire Beauté.
+              A confirmation has been sent to your email. Thank you for shopping with Lion of Judah.
             </p>
             <button onClick={onClose} className="btn-primary w-full">
               Continue Shopping

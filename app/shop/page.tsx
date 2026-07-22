@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import ShopClient from "@/components/ShopClient";
-import Pagination from "@/components/Pagination";
+
 
 export const metadata = { title: "Shop — Noire Beauté" };
 
