@@ -46,7 +46,7 @@ export default function Footer() {
               <FaPhone size={15} /> +254 793 692 936
             </li>
             <li className="flex items-center gap-2">
-              <FaEnvelope size={15} /> hello@noirebeaute.co.ke
+              <FaEnvelope size={15} /> lionofjudah254@gmail.com
             </li>
           </ul>
           <div className="flex gap-4 mt-5">
