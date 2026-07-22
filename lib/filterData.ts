@@ -1,3 +1,5 @@
+// lib/filterData.ts
+
 import {
   Brand,
   Category,
@@ -6,14 +8,14 @@ import {
   SubCategory,
 } from "./types";
 
-/* ==========================================
-   CATEGORY → SUBCATEGORY HIERARCHY
-========================================== */
-
 export interface CategoryGroup {
   category: Category;
   subCategories: SubCategory[];
 }
+
+/* ==========================================
+   CATEGORY → SUBCATEGORY HIERARCHY
+========================================== */
 
 export const categoryGroups: CategoryGroup[] = [
   {
@@ -48,7 +50,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Men's Skincare",
     ],
   },
-
   {
     category: "Makeup",
     subCategories: [
@@ -79,7 +80,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Mirrors",
     ],
   },
-
   {
     category: "Haircare",
     subCategories: [
@@ -107,7 +107,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Hair Clips",
     ],
   },
-
   {
     category: "Body Care",
     subCategories: [
@@ -125,7 +124,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Deodorants",
     ],
   },
-
   {
     category: "Fragrance",
     subCategories: [
@@ -138,7 +136,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Gift Sets",
     ],
   },
-
   {
     category: "Wellness",
     subCategories: [
@@ -157,7 +154,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Men's Health",
     ],
   },
-
   {
     category: "Essential Oils",
     subCategories: [
@@ -172,7 +168,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Lavender Oil",
     ],
   },
-
   {
     category: "Nails",
     subCategories: [
@@ -186,7 +181,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Press-On Nails",
     ],
   },
-
   {
     category: "Beauty Tools",
     subCategories: [
@@ -201,7 +195,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Trimmers",
     ],
   },
-
   {
     category: "Baby Care",
     subCategories: [
@@ -212,7 +205,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Baby Powder",
     ],
   },
-
   {
     category: "Men's Grooming",
     subCategories: [
@@ -226,7 +218,6 @@ export const categoryGroups: CategoryGroup[] = [
       "Hair Styling",
     ],
   },
-
   {
     category: "Gift Shop",
     subCategories: [
@@ -324,21 +315,12 @@ export const collections: Collection[] = [
    HELPERS
 ========================================== */
 
-/**
- * Get all subcategories for a category.
- */
-export function getSubCategories(
-  category: Category
-): SubCategory[] {
+export function getSubCategories(category: Category): SubCategory[] {
   return (
-    categoryGroups.find((g) => g.category === category)
-      ?.subCategories ?? []
+    categoryGroups.find((g) => g.category === category)?.subCategories ?? []
   );
 }
 
-/**
- * Get category from a subcategory.
- */
 export function getCategoryFromSubCategory(
   subCategory: SubCategory
 ): Category | undefined {
@@ -347,8 +329,6 @@ export function getCategoryFromSubCategory(
   )?.category;
 }
 
-/**
- * Flat array of every subcategory.
- */
-export const allSubCategories: SubCategory[] =
-  categoryGroups.flatMap((group) => group.subCategories);
+export const allSubCategories: SubCategory[] = categoryGroups.flatMap(
+  (group) => group.subCategories
+);
